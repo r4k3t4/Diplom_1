@@ -1,7 +1,7 @@
 import pytest
-from src.burger import Burger
-from src.bun import Bun
-from src.ingredient import Ingredient
+from praktikum.burger import Burger
+from praktikum.bun import Bun
+from praktikum.ingredient import Ingredient
 
 class TestBurger:
 

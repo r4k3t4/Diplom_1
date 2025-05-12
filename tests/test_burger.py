@@ -1,6 +1,7 @@
 import pytest
 from src.burger import Burger
 from src.bun import Bun
+from src.ingredient import Ingredient
 
 class TestBurger:
 
@@ -28,5 +29,19 @@ class TestBurger:
         assert burger.ingredients == ["burito"]
 
     def test_move_ingredient_burger(self):
-        
+        burger = Burger()
+        burger.add_ingredient("tomato")
+        burger.add_ingredient("burito")
+        burger.move_ingredient(0, 1)
+        assert burger.ingredients == ["burito", "tomato"]
+
+    def test_get_burger_price(self):
+        burger = Burger()
+        cheese = Ingredient('products', 'cheese', 1.00)
+        burger.ingredients.append(cheese)
+        burger.bun = Bun("mak", 3.00)
+        assert burger.get_price() == 7.00
+
+
+
 

@@ -42,6 +42,12 @@ class TestBurger:
         burger.bun = Bun("mak", 3.00)
         assert burger.get_price() == 7.00
 
+    def test_get_burger_receipt(self):
+        burger = Burger()
+        cheese = Ingredient('products', 'cheese', 1.00)
+        burger.ingredients.append(cheese)
+        burger.bun = Bun("mak", 3.00)
+        assert burger.get_receipt() == f'(==== {burger.bun.get_name()} ====)\n= {cheese.get_type()} {cheese.get_name()} =\n(==== {burger.bun.name} ====)\n\nPrice: {burger.get_price()}'
 
 
 

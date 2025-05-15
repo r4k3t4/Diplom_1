@@ -30,4 +30,4 @@ class Database:
         return self.buns
 
     def available_ingredients(self) -> List[Ingredient]:
-        return self.ingredient
+        return self.ingredients
